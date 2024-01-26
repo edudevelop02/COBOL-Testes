@@ -1,13 +1,10 @@
        IDENTIFICATION DIVISION.
        PROGRAM-ID. cbaula72_INDEXED.
-      *            123456789.123456789.123
       ****************************************************************
       * Author: Accampora.
       * Date: 15-10-2023.
       * Purpose: iNICIALIZA ARQUIVO SE NAO EXISTIR
       *    Ler arquivo indexado com CHAVE DE acesso randomico
-      *
-      *
       ****************************************************************
        ENVIRONMENT DIVISION.
        INPUT-OUTPUT SECTION.
