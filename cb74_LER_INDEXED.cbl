@@ -1,5 +1,5 @@
        IDENTIFICATION DIVISION.
-       PROGRAM-ID. cbaula74_LER_INDEXED.
+       PROGRAM-ID. cb74_LER_INDEXED.
       *            123456789.123456789.123
       ****************************************************************
       * Author: Accampora.
