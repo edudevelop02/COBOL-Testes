@@ -1,5 +1,5 @@
        IDENTIFICATION DIVISION.
-       PROGRAM-ID. cbaula72_INDEXED.
+       PROGRAM-ID. cb72_INDEXED.
       ****************************************************************
       * Author: Accampora.
       * Date: 15-10-2023.
