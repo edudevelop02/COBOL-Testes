@@ -1,8 +1,8 @@
        IDENTIFICATION DIVISION.
        PROGRAM-ID. CBJSON01.
       **************************************************************
-      *   OBS:  comando JSON GENERATE NAO IM`LEMENTADO NO OPECOBOL
-      *********************************************************
+      *   OBS:  comando JSON GENERATE NAO IMPLEMENTADO NO OPECOBOL
+      **************************************************************
        ENVIRONMENT DIVISION.
        DATA DIVISION.
        WORKING-STORAGE SECTION.
