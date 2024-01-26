@@ -2,7 +2,7 @@
       * Author: Accampora.
       * Date: 15-06-2023.
       * Purpose: Cadastro de clientes Indexados  new (Tipo: VSAM)
-      *          Fazer manutencao em cadastro de clientes INDEXADO
+      *          -Fazer manutencao em cadastro de clientes INDEXADO
       ******************************************************************
        IDENTIFICATION DIVISION.
        PROGRAM-ID. CADCLI01.
