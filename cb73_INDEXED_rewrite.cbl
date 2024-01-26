@@ -1,6 +1,6 @@
        IDENTIFICATION DIVISION.
-       PROGRAM-ID. cbaula73_INDEXED_rewrite.
-      *            123456789.123456789.123
+       PROGRAM-ID. cb73_INDEXED_rewrite.
+      *  
       ****************************************************************
       * Author: Accampora.
       * Date: 15-10-2023.
