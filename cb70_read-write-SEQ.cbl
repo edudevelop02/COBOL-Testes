@@ -1,6 +1,6 @@
        IDENTIFICATION DIVISION.
-       PROGRAM-ID. cbaula70_read-write-SEQ.
-      *            123456789.123456789.123
+       PROGRAM-ID. cb70_read-write-SEQ.
+      *      
       ****************************************************************
       * Author: Accampora.
       * Date: 12-10-2023.
