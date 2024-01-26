@@ -1,6 +1,5 @@
        IDENTIFICATION DIVISION.
-       PROGRAM-ID. cbaula74_INDEXED_DELETE.
-      *            123456789.123456789.123
+       PROGRAM-ID. cb74_INDEXED_DELETE.
       ****************************************************************
       * Author: Accampora.
       * Date: 24-10-2023.
