@@ -31,8 +31,8 @@
            05  FILLER  PIC X(50) VALUE "./cad-clientes.dat".
 
        01  WS-MODULO.
-           05 FILLER PIC X(30) VALUE "v1.02 CADASTRO DE CLIENTES -".
-           05 WS-OP  PIC X(20) VALUE SPACES.
+           05 FILLER PIC X(30)   VALUE "v1.02 CADASTRO DE CLIENTES -".
+           05 WS-OP  PIC X(20)   VALUE SPACES.
 
        77 WS-OPCAO PIC X.
            88 E-INCLUIR   VALUE IS "1".
