@@ -1,8 +1,8 @@
       ******************************************************************
       * Author: Accampora.
-      * Date: 15-06-2023.
-      * Purpose: Cadastro de clientes Indexados  new (Tipo: VSAM)
-      *          -Fazer manutencao em cadastro de clientes INDEXADO
+      * Date: 15-11-2026.
+      * Purpose: Cadastro de clientes Indexados  new
+      *
       ******************************************************************
        IDENTIFICATION DIVISION.
        PROGRAM-ID. CADCLI01.
@@ -31,8 +31,8 @@
            05  FILLER  PIC X(50) VALUE "./cad-clientes.dat".
 
        01  WS-MODULO.
-           05 FILLER PIC X(30)   VALUE "v1.02 CADASTRO DE CLIENTES -".
-           05 WS-OP  PIC X(20)   VALUE SPACES.
+           05 FILLER PIC X(30) VALUE "v:1.04 CADASTRO DE CLIENTES -".
+           05 WS-OP  PIC X(20) VALUE SPACES.
 
        77 WS-OPCAO PIC X.
            88 E-INCLUIR   VALUE IS "1".
@@ -49,18 +49,18 @@
        77 WS-ERRO PIC X.
            88 E-SIM VALUES ARE "S" "s".
 
-       77  X01 PIC X.
-       77  WS-NUML PIC 999.
-       77  WS-NUMC PIC 999.
-       77  LIN-X   PIC 99    VALUE 17.
-       77  COL-X   PIC 99    VALUE 1.
-       77  COR-FUNDO  PIC 9 VALUE 1.
-       77  COR-FRENTE PIC 9 VALUE 6.
+       77  X01         PIC X.
+       77  WS-NUML     PIC 999.
+       77  WS-NUMC     PIC 999.
+       77  LIN-X       PIC 99    VALUE 17.
+       77  COL-X       PIC 99    VALUE 1.
+       77  COR-FUNDO   PIC 9 VALUE 1.
+       77  COR-FRENTE  PIC 9 VALUE 6.
 
-       77 WS-STATUS PIC X(30).
-       77 WS-MSGERRO PIC X(80).
+       77 WS-STATUS    PIC X(30).
+       77 WS-MSGERRO   PIC X(80).
 
-       COPY screenio.
+           COPY screenio.
       *
        SCREEN SECTION.
        01 SS-CLS.
@@ -287,7 +287,7 @@
            IF NOT COB-CRT-STATUS = COB-SCR-ESC
                READ FILE1
                    INVALID KEY
-                       MOVE "CLIENTE NÃO ENCONTRADO" TO WS-MSGERRO
+                       MOVE "CLIENTE NAO ENCONTRADO" TO WS-MSGERRO
                        PERFORM MOSTRA-ERRO
                END-READ
            ELSE

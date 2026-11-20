@@ -1,0 +1,6 @@
+*.exe
+*.idy
+*.int
+/files/*
+!/files/cbARQIN.SEQ
+!/files/cbARQSAIDA.OUT

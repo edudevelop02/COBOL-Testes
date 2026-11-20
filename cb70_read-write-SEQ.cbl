@@ -3,9 +3,9 @@
       *      
       ****************************************************************
       * Author: Accampora.
-      * Date: 12-10-2023.
+      * Date: 12-11-2026.
       * Purpose: Comando read sequential files e gravar
-      *  arquivo de saida sequencial.
+      *  arquivo de saida line sequencial.
       *
       ****************************************************************
        ENVIRONMENT DIVISION.
@@ -23,24 +23,24 @@
       *
        DATA DIVISION.
        FILE SECTION.
-      *  TAMANHO DO REGISTRO = 20 CARACTERES SEM TERMINADOR FISICO
+      **  TAMANHO DO REGISTRO = 20 CARACTERES SEM TERMINADOR FISICO
        FD INFL-E.
        01 INFL-REC.
            05 STORE-IDX.
                10 STORE-ID     PIC 9(05).
-           05 FILLER       PIC X(01).
-           05 ITEM-ID      PIC X(10).
-           05 FILLER       PIC X(04).
+           05 FILLER           PIC X(01).
+           05 ITEM-ID          PIC X(10).
+           05 FILLER           PIC X(04).
       *
       *  TAMANHO DO REGISTRO = 20 CARACTERES SEM TERMINADOR FISICO
        FD  OUTFL-S.
        01  OUTFL-REC.
            05 O-STORE-IDX.
-              10 O-STORE-ID     PIC 9(05).
-           05 DELIMIT-OUT    PIC X(01).
-           05 O-ITEM-ID      PIC X(10).
-           05 FILLER         PIC X(03).
-           05 DELIMIT2-OUT   PIC X(01).
+              10 O-STORE-ID    PIC 9(05).
+           05 DELIMIT-OUT      PIC X(01).
+           05 O-ITEM-ID        PIC X(10).
+           05 FILLER           PIC X(03).
+           05 DELIMIT2-OUT     PIC X(01).
       *
        WORKING-STORAGE SECTION.
        01  INFLDD.
@@ -63,8 +63,8 @@
            05  READ-COUNT     PIC 9(02).
            05  WRITE-COUNT    PIC 9(02).
 
-           88 E-SIM VALUES ARE "S" "s".
        77  XY     PIC X.
+           88 E-SIM     VALUES "S" "s".
       *
        PROCEDURE DIVISION.
        INICIO.
@@ -121,6 +121,7 @@
                    END-IF
                NOT AT END
                    PERFORM WRITE-PARA   THRU WRITE-EXIT-PARA
+                   
                END-READ
            END-PERFORM.
        PROCESS-EXIT-PARA.
@@ -128,23 +129,29 @@
       *===================================
        WRITE-PARA.
            ADD 1    TO READ-COUNT.
-           DISPLAY "==>" INFL-REC "<== REGISTRO=" READ-COUNT
-           IF  STORE-ID > 12346
-               MOVE SPACES       TO OUTFL-REC
+           DISPLAY "E==>" INFL-REC "<== REGISTRO=" READ-COUNT
+           IF  STORE-IDX < "12351"
+               MOVE SPACES        TO OUTFL-REC
                MOVE STORE-IDX     TO O-STORE-IDX
-               MOVE ITEM-ID      TO O-ITEM-ID
-               MOVE "|"          TO DELIMIT-OUT
-               MOVE "#"          TO DELIMIT2-OUT
+               MOVE ITEM-ID       TO O-ITEM-ID
+               MOVE "|"           TO DELIMIT-OUT
+               MOVE "#"           TO DELIMIT2-OUT
 
       *=====>  GRAVA O REGISTRO ===================
+               ADD 1    TO WRITE-COUNT
                WRITE OUTFL-REC
-               DISPLAY '   STORE-ID: ' STORE-ID
-               DISPLAY '   ITEM ID   ' ITEM-ID
+               DISPLAY "S==>" OUTFL-REC "<== REGISTRO=" READ-COUNT
+               DISPLAY '   STORE-ID: ' O-STORE-ID
+               DISPLAY '   ITEM ID   ' O-ITEM-ID
+               DISPLAY '------------------------'
            END-IF.
        WRITE-EXIT-PARA.
            EXIT.
 
        CLOSE-PARA.
+           DISPLAY "FECHANDO ARQUIVOS ..."
+           DISPLAY "   LIDOS   : " READ-COUNT " REGISTROS"
+           DISPLAY "   GRAVADOS: " WRITE-COUNT " REGISTROS"
            CLOSE INFL-E  OUTFL-S.
        CLOSE-EXIT-PARA.
            EXIT.

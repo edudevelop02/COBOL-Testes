@@ -1,0 +1,11 @@
+Compilar GnuCOBOL No terminal, na pasta do arquivo, use:
+
+```powershell
+cobc -x -o cb70_read-write-SEQ.exe cb70_read-write-SEQ.cbl
+```
+
+O comando usa o GnuCOBOL (`cobc`), que precisa estar instalado e disponível no `PATH`.
+
+
+git config --global user.name "edudevelop02"
+git config --global user.email "edudevelop02@gmail.com"
